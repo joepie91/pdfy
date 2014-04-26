@@ -26,7 +26,16 @@ $router->routes = array(
 	)
 );
 
-$router->RouteRequest();
+try
+{
+	$router->RouteRequest();
+}
+catch (RouterException $e)
+{
+	http_status_code(404);
+	$sPageTitle = "Uh oh!";
+	$sPageContents = "<h2>Uh oh!</h2><p>We could not find the page you are looking for.</p>";
+}
 
 echo(NewTemplater::Render("layout", $locale->strings, array(
 	"title" => $sPageTitle,
