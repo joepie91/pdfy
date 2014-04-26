@@ -1,0 +1,4 @@
+sasswatch.*
+config.json
+.sass-cache
+storage

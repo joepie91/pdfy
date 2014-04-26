@@ -1,0 +1,24 @@
+_locale;								en_US.UTF-8,en_US
+_datetime_short;							%d/%m/%Y %H:%M:%S
+_datetime_long;								%A %B %d, %Y %H:%M:%S
+_date_short;								%d/%m/%Y
+_date_long;								%A %B %d, %Y
+_time;									%H:%M:%S
+		
+event-now;								now
+event-future;								in the future
+event-past;								in the past
+event-1second-ago;							1 second ago
+event-seconds-ago;							%1$d seconds ago
+event-1minutes-ago;							1 minute ago
+event-minutes-ago;							%1$d minutes ago
+event-1hour-ago;							1 hour ago
+event-hours-ago;							%1$d hours ago
+event-1day-ago;								1 day ago
+event-days-ago;								%1$d days ago
+event-1week-ago;							1 week ago
+event-weeks-ago;							%1$d weeks ago
+event-1month-ago;							1 month ago
+event-months-ago;							%1$d months ago
+event-1year-ago;							1 year ago
+event-years-ago;							%1$d years ago

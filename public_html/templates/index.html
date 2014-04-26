@@ -1,0 +1,62 @@
+<div class="upload-form">
+	<form method="post" action="/upload" enctype="multipart/form-data" id="upload_form">
+		<div class="upload">
+			<button class="pure-button button-browse" id="upload_activator" type="button">Click to browse</button> ... or <strong>drag and drop</strong> a PDF file here, to upload it (max. 50 MB).
+			<input type="hidden" name="MAX_FILE_SIZE" value="52428800">
+			<input type="file" name="file" id="upload_element" accept="application/pdf">
+			<div id="uploadzone" style="display: none;"></div>
+		</div>
+		
+		<div class="fileinfo">
+			<h2>
+				<span class="filename"></span> (<span class="filesize"></span>)
+			</h2>
+			
+			<div>
+				<input id="vis_public" type="radio" name="visibility" value="public" checked>
+				<label for="vis_public">
+					<strong>Public</strong>
+					(anybody can view it, it will be mirrored, and can be put into a gallery)
+				</label>
+			</div>
+			
+			<div>
+				<input id="vis_unlisted" type="radio" name="visibility" value="unlisted">
+				<label for="vis_unlisted">
+					<strong>Unlisted</strong>
+					(only people with the exact URL can view the PDF)
+				</label>
+			</div>
+			
+			<button type="submit" class="button-submit pure-button">✓ Continue your upload</button>
+		</div>
+		
+		<div class="info">
+			<p>
+				What you get:
+			</p>
+			
+			<ul>
+				<li>Your PDF hosted permanently, ad-free.</li>
+				<li>Share-able page with PDF viewer (using <a href="https://mozilla.github.io/pdf.js/">pdf.js</a>).</li>
+				<li>Embeddable version of the viewer.</li>
+				<li>Original PDF can be downloaded by anybody, without registration.</li>
+				<li>All public PDFs mirrored to the <a href="http://archive.org/">Internet Archive</a> for preservation.</li>
+			</ul>
+		</div>
+	</form>
+	
+	<div class="progress">
+		<div class="numbers">
+			Uploaded <strong><span class="done"></span></strong> / <strong><span class="total"></span></strong>... (<span class="percentage"></span>%)
+		</div>
+		
+		<div class="wait">
+			Just a moment...
+		</div>
+		
+		<div class="bar">
+			<div class="bar-inner"></div>
+		</div>
+	</div>
+</div>

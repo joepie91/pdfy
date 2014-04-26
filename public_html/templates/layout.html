@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{%?title} - PDFy - Instant PDF Host</title>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="/static/js/jquery.ui.widget.js"></script>
+		<script src="/static/js/jquery.iframe-transport.js"></script>
+		<script src="/static/js/jquery.fileupload.js"></script>
+		<script src="/static/js/script.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="wrapper">
+				<h1>PDFy</h1>
+				<a href="/" class="pure-button button-upload">Upload a PDF</a>
+				<div class="abuse">
+					Report abuse? <a href="mailto:abuse@cryto.net">abuse.pdf@cryto.net</a>
+				</div>
+			</div>
+		</div>
+		<div class="subtext">
+			<div class="wrapper">
+				<p>
+					<strong>Why does PDFy exist?</strong> I got sick of documents getting locked up behind login walls of services like Scribd.
+					PDFy exists to offer a place where anybody can instantly upload and share a PDF, much like Imgur does for images. PDFy is free, ad-free, and non-commercial.
+				</p>
+				<p>
+					<strong>Servers aren't free, though.</strong> Your donations are much appreciated. You can donate <a href="http://cryto.net/~joepie91/donate.html">by clicking here</a>,
+					using PayPal, Bitcoin, or Flattr.
+				</p>
+			</div>
+		</div>
+		<div class="contents">
+			<div class="wrapper">
+				{%?contents}
+			</div>
+		</div>
+		<div id="drag_ghost">Drop!</div>
+	</body>
+</html>
