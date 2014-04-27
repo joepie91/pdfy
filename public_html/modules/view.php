@@ -29,6 +29,7 @@ catch (NotFoundException $e)
 echo(NewTemplater::Render("view", $locale->strings, array(
 	"slug" => $document->sSlugId,
 	"filename" => $document->sOriginalFilename,
-	"views" => $document->sViews
+	"views" => $document->sViews,
+	"private" => !$document->sIsPublic
 )));
 die();

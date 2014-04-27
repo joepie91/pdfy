@@ -45,6 +45,9 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
     <script type="text/javascript" src="/static/pdfjs/debugger.js"></script>
     <script type="text/javascript" src="/static/pdfjs/viewer.js"></script>
+    {%if private == true}
+      <meta name="robots" content="noindex">
+    {%/if}
   </head>
 
   <body tabindex="1">

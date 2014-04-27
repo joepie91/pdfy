@@ -39,6 +39,7 @@ echo(NewTemplater::Render("embed", $locale->strings, array(
 	"url" => "/document/{$document->sSlugId}/download",
 	"slug" => $document->sSlugId,
 	"sparse" => (!empty($_GET["sparse"])) ? "true" : "false",
-	"footer" => $show_footer
+	"footer" => $show_footer,
+	"private" => !$document->sIsPublic
 )));
 die();

@@ -10,6 +10,9 @@
 		<script>
 			var embed_template = '<iframe src="http://pdf.cryto.net/document/{%?slug}/embed?sparse={SPARSE}" style="width: 960; height: 700; border: 0px;"></iframe>';
 		</script>
+		{%if private == true}
+			<meta name="robots" content="noindex">
+		{%/if}
 	</head>
 	<body class="full-screen">
 		<div class="header">
