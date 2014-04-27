@@ -20,12 +20,14 @@ body {
       padding: 3px 9px;
       margin: 0px 4px; }
   body .wrapper {
-    width: 960px;
+    max-width: 960px;
     margin: 0px auto; }
   body .header, body .contents, body .subtext {
     padding: 18px; }
   body .header {
-    background-color: black; }
+    background-color: black;
+    overflow: hidden;
+    height: 42px; }
     body .header h1 {
       margin: 0px;
       display: inline-block; }
@@ -42,10 +44,8 @@ body {
       margin-top: 10px; }
   body .contents h2 {
     margin-top: 0px; }
-  body .contents iframe.viewer {
-    width: 100%;
-    height: 700px;
-    border: 0px; }
+  body .contents #upload_activator {
+    margin-bottom: 18px; }
   body .contents .upload-form {
     font-size: 18px;
     text-align: center; }
@@ -57,7 +57,7 @@ body {
       opacity: 0.4; }
     body .contents .upload-form .info, body .contents .upload-form .fileinfo, body .contents .upload-form .progress {
       text-align: left;
-      width: 700px;
+      max-width: 700px;
       margin: 64px auto 0px auto; }
     body .contents .upload-form .fileinfo {
       display: none; }
@@ -95,6 +95,31 @@ body {
       width: 100%;
       height: 100%;
       border: 0px; }
+  body .viewer-contents .bottombar {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 48px;
+    padding: 8px; }
+    body .viewer-contents .bottombar .header-wrapper {
+      width: 99%; }
+      body .viewer-contents .bottombar .header-wrapper h2 {
+        display: block;
+        margin: 0px 0px 3px 0px;
+        font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    body .viewer-contents .bottombar .tools {
+      font-size: 14px; }
+      body .viewer-contents .bottombar .tools .views {
+        float: left;
+        margin-top: 4px;
+        font-weight: bold; }
+      body .viewer-contents .bottombar .tools .download {
+        float: right; }
   body .viewer-contents .sidebar {
     position: absolute;
     top: 78px;
@@ -136,3 +161,18 @@ body {
   font-size: 19px;
   font-weight: bold;
   border-radius: 5px; }
+
+@media (max-width: 575px) {
+  .header .abuse {
+    display: none; } }
+@media (max-width: 800px) {
+  .dragdrop-instructions {
+    display: block; } }
+@media (max-width: 1200px) {
+  body .viewer-contents .sidebar {
+    display: none; }
+  body .viewer-contents .viewer-wrapper {
+    right: 0px;
+    bottom: 64px; }
+  body .viewer-contents .bottombar {
+    display: block; } }

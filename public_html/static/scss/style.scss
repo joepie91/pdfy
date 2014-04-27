@@ -38,7 +38,7 @@ body
 	
 	.wrapper
 	{
-		width: 960px;
+		max-width: 960px;
 		margin: 0px auto;
 	}
 	
@@ -50,6 +50,8 @@ body
 	.header
 	{
 		background-color: black;
+		overflow: hidden;
+		height: 42px;
 			
 		h1
 		{
@@ -85,11 +87,9 @@ body
 			margin-top: 0px;
 		}
 		
-		iframe.viewer
+		#upload_activator
 		{
-			width: 100%;
-			height: 700px;
-			border: 0px;
+			margin-bottom: 18px;
 		}
 		
 		.upload-form
@@ -112,7 +112,7 @@ body
 			.info, .fileinfo, .progress
 			{
 				text-align: left;
-				width: 700px;
+				max-width: 700px;
 				margin: 64px auto 0px auto;
 			}
 			
@@ -189,6 +189,49 @@ body
 			}
 		}
 		
+		.bottombar
+		{
+			display: none;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			height: 48px;
+			padding: 8px;
+			
+			.header-wrapper
+			{
+				width: 99%;
+								
+				h2
+				{
+					display: block;
+					margin: 0px 0px 3px 0px;
+					font-size: 17px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			
+			.tools
+			{
+				font-size: 14px;
+				
+				.views
+				{
+					float: left;
+					margin-top: 4px;
+					font-weight: bold;
+				}
+				
+				.download
+				{
+					float: right;
+				}
+			}
+		}
+		
 		.sidebar
 		{
 			position: absolute;
@@ -253,4 +296,45 @@ body
 	font-size: 19px;
 	font-weight: bold;
 	border-radius: 5px;
+}
+
+@media (max-width: 575px)
+{
+	.header .abuse
+	{
+		display: none;
+	}
+}
+
+@media (max-width: 800px)
+{
+	.dragdrop-instructions
+	{
+		display: block;
+	}
+}
+
+@media (max-width: 1200px)
+{
+	body
+	{
+		.viewer-contents
+		{
+			.sidebar
+			{
+				display: none;
+			}
+			
+			.viewer-wrapper
+			{
+				right: 0px;
+				bottom: 64px;
+			}
+			
+			.bottombar
+			{
+				display: block;
+			}
+		}
+	}
 }

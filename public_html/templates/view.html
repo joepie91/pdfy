@@ -25,6 +25,20 @@
 			<div class="viewer-wrapper">
 				<iframe src="/document/{%?slug}/embed/?sparse=1&footer=0" class="viewer"></iframe>
 			</div>
+			<div class="bottombar">
+				<div class="header-wrapper">
+					<h2>{%?filename}</h2>
+				</div>
+				<div class="tools">
+					<div class="views">
+						{%?views} views
+					</div>
+					
+					<div class="download">
+						Download as: <a href="/document/{%?slug}/download" class="pure-button inline">PDF</a>
+					</div>
+				</div>
+			</div>
 			<div class="sidebar">
 				<h2>{%?filename}</h2>
 				

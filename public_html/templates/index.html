@@ -1,7 +1,10 @@
 <div class="upload-form">
 	<form method="post" action="/upload" enctype="multipart/form-data" id="upload_form">
 		<div class="upload">
-			<button class="pure-button button-browse" id="upload_activator" type="button">Click to browse</button> ... or <strong>drag and drop</strong> a PDF file here, to upload it (max. 50 MB).
+			<button class="pure-button button-browse" id="upload_activator" type="button">Click to browse</button>
+			<span class="dragdrop-instructions">
+				... or <strong>drag and drop</strong> a PDF file here, to upload it (max. 50 MB).
+			</span>
 			<input type="hidden" name="MAX_FILE_SIZE" value="52428800">
 			<input type="file" name="file" id="upload_element" accept="application/pdf">
 			<div id="uploadzone" style="display: none;"></div>
