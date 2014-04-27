@@ -48,7 +48,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
   </head>
 
   <body tabindex="1">
-    <div id="viewer_container">
+    <div id="viewer_container" {%if footer == true}class="footer-visible"{%/if}>
       <div id="outerContainer" class="loadingInProgress">
 
         <div id="sidebarContainer">
@@ -401,10 +401,12 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     </div>
   </div>
     </div>
-    <div class="footer_bar">
-      <strong>Free instant PDF hosting by <a href="http://pdf.cryto.net/" target="_blank">PDFy</a>!</strong>
-      <a href="http://pdf.cryto.net/document/{%?slug}/download" class="original" target="_blank">Download original PDF</a>
-    </div>
+    {%if footer == true}
+      <div class="footer_bar">
+        <strong>Free instant PDF hosting by <a href="http://pdf.cryto.net/" target="_blank">PDFy</a>!</strong>
+        <a href="http://pdf.cryto.net/document/{%?slug}/download" class="original" target="_blank">Download original PDF</a>
+      </div>
+    {%/if}
   </body>
 </html>
 

@@ -23,12 +23,22 @@ catch (NotFoundException $e)
 	die("404 Not Found");
 }
 
+if(isset($_GET["footer"]))
+{
+	$show_footer = !!$_GET["footer"];
+}
+else
+{
+	$show_footer = true;
+}
+
 /* Not using the ORM here because this operation needs to be atomic. */
 $database->CachedQuery("UPDATE documents SET `Views` = `Views` + 1 WHERE `Id` = :Id", array("Id" => $document->sId), 0);
 
 echo(NewTemplater::Render("embed", $locale->strings, array(
 	"url" => "/document/{$document->sSlugId}/download",
 	"slug" => $document->sSlugId,
-	"sparse" => (!empty($_GET["sparse"])) ? "true" : "false"
+	"sparse" => (!empty($_GET["sparse"])) ? "true" : "false",
+	"footer" => $show_footer
 )));
 die();
