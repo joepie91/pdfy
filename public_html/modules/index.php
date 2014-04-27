@@ -13,7 +13,7 @@
 
 if(!isset($_APP)) { die("Unauthorized."); }
 
-$latest = Document::CreateFromQuery("SELECT * FROM documents ORDER BY `Uploaded` DESC, `Id` DESC LIMIT 6");
+$latest = Document::CreateFromQuery("SELECT * FROM documents WHERE `Public` = 1 ORDER BY `Uploaded` DESC, `Id` DESC LIMIT 6");
 $sDocuments = array();
 
 foreach($latest as $document)
