@@ -23,6 +23,9 @@ catch (NotFoundException $e)
 	die("404 Not Found");
 }
 
+/* Not using the ORM here because this operation needs to be atomic. */
+$database->CachedQuery("UPDATE documents SET `Views` = `Views` + 1 WHERE `Id` = :Id", array("Id" => $document->sId), 0);
+
 echo(NewTemplater::Render("embed", $locale->strings, array(
 	"url" => "/document/{$document->sSlugId}/download",
 	"slug" => $document->sSlugId,
