@@ -23,5 +23,9 @@ catch (NotFoundException $e)
 	die("404 Not Found");
 }
 
-echo(NewTemplater::Render("embed", $locale->strings, array("url" => "/document/{$document->sSlugId}/download", "slug" => $document->sSlugId)));
+echo(NewTemplater::Render("embed", $locale->strings, array(
+	"url" => "/document/{$document->sSlugId}/download",
+	"slug" => $document->sSlugId,
+	"sparse" => (!empty($_GET["sparse"])) ? "true" : "false"
+)));
 die();

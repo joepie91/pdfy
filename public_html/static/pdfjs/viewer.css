@@ -330,7 +330,7 @@ html[dir='rtl'] #toolbarSidebar {
               0 0 1px hsla(0,0%,0%,.1);
 }
 
-#toolbarContainer, .findbar, .secondaryToolbar {
+#toolbarContainer, .findbar, .secondaryToolbar, #toolbarToggle {
   position: relative;
   height: 32px;
   background-color: #474747; /* fallback */
@@ -1979,3 +1979,22 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
   }
 }
 
+#toolbarToggle
+{
+  display: none;
+  background-color: hsla(0,0%,27%);
+  background-image: none;
+  padding: 4px 7px;
+  width: 16px;
+  height: 18px;
+  left: 4px;
+  color: hsl(0,0%,85%);
+  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
+              inset 0 1px 1px hsla(0, 0%, 13%, 0.15),
+              inset 0 -1px 0 hsla(0, 2%, 49%, 0.05),
+              /*inset 0 1px 1px hsla(0,0%,0%,.15),
+              inset 0 -1px 0 hsla(0,0%,100%,.05),*/
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 1px 1px hsla(0,0%,0%,.1),
+              2px 2px 2px 0px #303030;
+}

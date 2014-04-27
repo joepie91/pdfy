@@ -25,12 +25,14 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     <title>PDF.js viewer</title>
     <script>
       var DEFAULT_URL = "{%?url}";
+      var SPARSE = {%?sparse};
     </script>
 
 
     <link rel="stylesheet" href="/static/pdfjs/viewer.css"/>
 
     <script type="text/javascript" src="/static/pdfjs/compatibility.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 
 
@@ -43,7 +45,6 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
     <script type="text/javascript" src="/static/pdfjs/debugger.js"></script>
     <script type="text/javascript" src="/static/pdfjs/viewer.js"></script>
-
   </head>
 
   <body tabindex="1">
@@ -225,6 +226,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
                   </div>
                 </div>
               </div>
+              <div id="toolbarToggle">▼</div>
             </div>
           </div>
 
@@ -400,8 +402,8 @@ http://sourceforge.net/adobe/cmap/wiki/License/
   </div>
     </div>
     <div class="footer_bar">
-      <strong>Free instant PDF hosting by <a href="http://pdf.cryto.net/">PDFy</a>!</strong>
-      <a href="http://pdf.cryto.net/document/{%?slug}/download" class="original">Download original PDF</a>
+      <strong>Free instant PDF hosting by <a href="http://pdf.cryto.net/" target="_blank">PDFy</a>!</strong>
+      <a href="http://pdf.cryto.net/document/{%?slug}/download" class="original" target="_blank">Download original PDF</a>
     </div>
   </body>
 </html>
