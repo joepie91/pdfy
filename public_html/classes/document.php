@@ -31,6 +31,9 @@ class Document extends CPHPDatabaseRecordClass
 		),
 		"boolean" => array(
 			"IsPublic" => "Public"
+		),
+		"timestamp" => array(
+			"UploadDate" => "Uploaded"
 		)
 	);
 

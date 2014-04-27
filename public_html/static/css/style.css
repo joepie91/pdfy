@@ -51,6 +51,17 @@ body {
     margin-top: 0px; }
   body .contents #upload_activator {
     margin-bottom: 18px; }
+  body .contents .latest {
+    margin-top: 64px; }
+    body .contents .latest a {
+      display: inline-block;
+      width: 150px;
+      height: 218px;
+      background-color: white;
+      text-decoration: none;
+      border: 0px; }
+      body .contents .latest a img {
+        width: 150px; }
   body .contents .upload-form {
     font-size: 18px;
     text-align: center; }

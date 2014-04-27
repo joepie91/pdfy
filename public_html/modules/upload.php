@@ -41,7 +41,14 @@ if($router->uMethod == "post")
 		die("error/98");
 	}
 	
+	$slug = random_string(16);
 	$new_filename = random_string(16);
+	
+	/* Make a thumbnail... */
+	$magick = new imagick("{$file['tmp_name']}[0]");
+	$magick->cropThumbnailImage(180, 261);
+	$magick->setImageFormat("png");
+	$magick->writeImage("static/thumbs/{$slug}.png");
 	
 	move_uploaded_file($file["tmp_name"], "{$cphp_config->storage_path}/{$new_filename}");
 	
@@ -49,9 +56,10 @@ if($router->uMethod == "post")
 	$document->uIsPublic = ($_POST["visibility"] === "public");
 	$document->uFilename = $new_filename;
 	$document->uOriginalFilename = $file["name"];
-	$document->uSlugId = random_string(16);
+	$document->uSlugId = $slug;
 	$document->uDeleteKey = random_string(32);
+	$document->uUploadDate = time();
 	$document->InsertIntoDatabase();
 	
-	die("document/{$document->sSlugId}");
+	die("document/{$slug}");
 }

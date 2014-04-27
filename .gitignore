@@ -2,3 +2,4 @@ sasswatch.*
 config.json
 .sass-cache
 storage
+public_html/static/thumbs

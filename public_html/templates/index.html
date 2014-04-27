@@ -63,3 +63,12 @@
 		</div>
 	</div>
 </div>
+
+<div class="latest">
+	<h2>Latest public documents</h2>
+	{%foreach document in documents}
+		<a href="/document/{%?document[slug]}">
+			<img src="/static/thumbs/{%?document[slug]}.png" title="{%?document[name]}">
+		</a>
+	{%/foreach}
+</div>

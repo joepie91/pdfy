@@ -13,5 +13,17 @@
 
 if(!isset($_APP)) { die("Unauthorized."); }
 
+$latest = Document::CreateFromQuery("SELECT * FROM documents ORDER BY `Uploaded` DESC, `Id` DESC LIMIT 6");
+$sDocuments = array();
+
+foreach($latest as $document)
+{
+	$sDocuments[] = array(
+		"slug" => $document->sSlugId,
+		"name" => $document->sOriginalFilename,
+		"views" => $document->sViews
+	);
+}
+
 $sPageTitle = "Upload";
-$sPageContents = NewTemplater::Render("index", $locale->strings, array());
+$sPageContents = NewTemplater::Render("index", $locale->strings, array("documents" => $sDocuments));
