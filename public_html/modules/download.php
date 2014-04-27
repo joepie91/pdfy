@@ -150,6 +150,9 @@ else
 		}
 		
 		$offset += $block_size;
+		
+		/* Ensure that script execution doesn't time out. */
+		set_time_limit(0);
 	}
 
 	fclose($handle);
