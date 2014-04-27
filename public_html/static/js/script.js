@@ -131,12 +131,6 @@ $(function(){
 		{
 			data_object.submit();
 		}
-		
-		/*updateUploadProgress({
-			lengthComputable: true,
-			loaded: 4300,
-			total: 12000
-		});*/
 	});
 	
 	$(".autoselect").on("click", function(event){

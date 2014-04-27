@@ -1998,3 +1998,69 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
               0 1px 1px hsla(0,0%,0%,.1),
               2px 2px 2px 0px #303030;
 }
+
+::-webkit-scrollbar
+{
+  background-color: white;
+}
+
+::-webkit-scrollbar-track
+{
+  background-color: #5A5A61;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: #171717;
+}
+
+::-webkit-scrollbar-track:vertical
+{
+  border-left: 1px solid #323235;
+}
+
+::-webkit-scrollbar-thumb-vertical
+{
+  border-left: 1px solid #323235;
+}
+
+::-webkit-scrollbar-track:horizontal
+{
+  border-top: 1px solid #323235;
+}
+
+::-webkit-scrollbar-thumb-horizontal
+{
+  border-top: 1px solid #323235;
+}
+
+::-webkit-scrollbar-button
+{
+  background-color: #1C1C1C;
+  color: white;
+  background-position: 0px -1px;
+}
+
+::-webkit-scrollbar-button:vertical:increment
+{
+  background-image: url(/static/pdfjs/images/arrow-down.png);
+  border-top: 1px solid black;
+}
+
+::-webkit-scrollbar-button:vertical:decrement
+{
+  background-image: url(/static/pdfjs/images/arrow-up.png);
+  border-bottom: 1px solid black;
+}
+
+::-webkit-scrollbar-button:horizontal:increment
+{
+  background-image: url(/static/pdfjs/images/arrow-right.png);
+  border-left: 1px solid black;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement
+{
+  background-image: url(/static/pdfjs/images/arrow-left.png);
+  border-right: 1px solid black;
+}
