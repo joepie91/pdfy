@@ -25,5 +25,10 @@ catch (NotFoundException $e)
 	return;
 }
 
-$sPageTitle = "View {$document->sOriginalFilename}";
-$sPageContents = NewTemplater::Render("view", $locale->strings, array("slug" => $document->sSlugId, "filename" => $document->sOriginalFilename));
+/* We use a custom layout here, so we don't need the regular layout wrapper. Just kill off execution here. */
+echo(NewTemplater::Render("view", $locale->strings, array(
+	"slug" => $document->sSlugId,
+	"filename" => $document->sOriginalFilename,
+	"views" => $document->sViews
+)));
+die();

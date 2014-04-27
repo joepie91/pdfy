@@ -4,6 +4,8 @@ body {
   font-family: "PT Sans", sans-serif;
   padding: 0px;
   margin: 0px; }
+  body.full-screen {
+    overflow: hidden; }
   body a {
     color: #94EBD9;
     text-decoration: none; }
@@ -14,6 +16,9 @@ body {
     background-color: #181818;
     border: 1px solid #0B7474;
     color: white; }
+    body .pure-button.inline {
+      padding: 3px 9px;
+      margin: 0px 4px; }
   body .wrapper {
     width: 960px;
     margin: 0px auto; }
@@ -37,18 +42,6 @@ body {
       margin-top: 10px; }
   body .contents h2 {
     margin-top: 0px; }
-  body .contents .embed-code {
-    float: right;
-    padding-top: 3px;
-    margin-left: 8px; }
-    body .contents .embed-code input {
-      width: 340px;
-      background-color: #1C1C1C;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-left: 16px;
-      padding: 4px;
-      color: #E1E1E1; }
   body .contents iframe.viewer {
     width: 100%;
     height: 700px;
@@ -91,6 +84,44 @@ body {
       background-color: #014949;
       width: 0%;
       border-radius: 3px; }
+  body .viewer-contents .viewer-wrapper {
+    position: absolute;
+    top: 78px;
+    bottom: 0px;
+    left: 0px;
+    right: 320px; }
+    body .viewer-contents .viewer-wrapper .viewer {
+      width: 100%;
+      height: 100%;
+      border: 0px; }
+  body .viewer-contents .sidebar {
+    position: absolute;
+    top: 78px;
+    bottom: 0px;
+    right: 0px;
+    width: 320px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 16px; }
+    body .viewer-contents .sidebar textarea {
+      width: 280px;
+      height: 100px;
+      background-color: #1C1C1C;
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 4px;
+      color: #E1E1E1; }
+    body .viewer-contents .sidebar h3 {
+      margin-bottom: 8px;
+      margin-top: 28px; }
+    body .viewer-contents .sidebar p {
+      margin: 8px 0px; }
+    body .viewer-contents .sidebar .toolbar-settings {
+      margin: 8px 3px; }
+      body .viewer-contents .sidebar .toolbar-settings input {
+        margin-right: 4px; }
+      body .viewer-contents .sidebar .toolbar-settings label {
+        margin-right: 9px; }
 
 #drag_ghost {
   display: none;

@@ -6,6 +6,11 @@ body
 	padding: 0px;
 	margin: 0px;
 	
+	&.full-screen
+	{
+		overflow: hidden;
+	}
+	
 	a
 	{
 		color: #94EBD9;
@@ -23,6 +28,12 @@ body
 		background-color: #181818;
 		border: 1px solid #0B7474;
 		color: white;
+		
+		&.inline
+		{
+			 padding: 3px 9px;
+			 margin: 0px 4px;
+		}
 	}
 	
 	.wrapper
@@ -72,24 +83,6 @@ body
 		h2
 		{
 			margin-top: 0px;
-		}
-		
-		.embed-code
-		{
-			float: right;
-			padding-top: 3px;
-			margin-left: 8px;
-			
-			input
-			{
-				width: 340px;
-				background-color: #1C1C1C;
-				border: 1px solid black;
-				border-radius: 4px;
-				margin-left: 16px;
-				padding: 4px;
-				color: #E1E1E1;
-			}
 		}
 		
 		iframe.viewer
@@ -173,6 +166,74 @@ body
 				background-color: #014949;
 				width: 0%;
 				border-radius: 3px;
+			}
+		}
+	}
+	
+	.viewer-contents
+	{
+		.viewer-wrapper
+		{
+			position: absolute;
+			top: 78px;
+			bottom: 0px;
+			left: 0px;
+			right: 320px;
+			
+			.viewer
+			{
+				width: 100%;
+				height: 100%;
+				border: 0px;
+			}
+		}
+		
+		.sidebar
+		{
+			position: absolute;
+			top: 78px;
+			bottom: 0px;
+			right: 0px;
+			width: 320px;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			padding: 16px;
+			
+			textarea
+			{
+				width: 280px;
+				height: 100px;
+				background-color: #1C1C1C;
+				border: 1px solid black;
+				border-radius: 4px;
+				padding: 4px;
+				color: #E1E1E1;
+			}
+			
+			h3
+			{
+				margin-bottom: 8px;
+				margin-top: 28px;
+			}
+			
+			p
+			{
+				margin: 8px 0px;
+			}
+			
+			.toolbar-settings
+			{
+				margin: 8px 3px;
+				
+				input
+				{
+					 margin-right: 4px;
+				}
+				
+				label
+				{
+					margin-right: 9px;
+				}
 			}
 		}
 	}

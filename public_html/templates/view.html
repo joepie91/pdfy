@@ -1,8 +1,56 @@
-<div class="embed-code">
-	<strong>Embedding code:</strong>
-	<input type="text" class="autoselect" value='<iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"></iframe>'>
-</div>
+<!doctype html>
+<html>
+	<head>
+		<title>View {%?filename} - PDFy - Instant PDF Host</title>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="/static/js/script.js"></script>
+		<script>
+			var embed_template = '<iframe src="http://pdf.cryto.net/document/{%?slug}/embed?sparse={SPARSE}" style="width: 960; height: 700; border: 0px;"></iframe>';
+		</script>
+	</head>
+	<body class="full-screen">
+		<div class="header">
+			<div class="wrapper">
+				<h1>PDFy</h1>
+				<a href="/" class="pure-button button-upload">Upload a PDF</a>
+				<div class="abuse">
+					Report abuse? <a href="mailto:abuse@cryto.net">abuse@cryto.net</a>
+				</div>
+			</div>
+		</div>
+		<div class="viewer-contents">
+			<div class="viewer-wrapper">
+				<iframe src="/document/{%?slug}/embed/?sparse=1" class="viewer"></iframe>
+			</div>
+			<div class="sidebar">
+				<h2>{%?filename}</h2>
+				
+				<p>{%?views} views</p>
+				
+				<h3>Download this document</h3>
+				
+				<p>
+					Free, no registration necessary!
+				</p>
+				
+				<p>
+					Format: <a href="/document/{%?slug}/download" class="pure-button inline">PDF</a>
+				</p>
+				
+				<h3>Embed this document</h3>
+				
+				<div class="toolbar-settings">
+					<input type="radio" id="toolbar_yes" name="sparse" value="0" checked><label for="toolbar_yes">Show toolbar</label>
+					<input type="radio" id="toolbar_no" name="sparse" value="1"><label for="toolbar_no">Hide toolbar</label>
+				</div>
+				
+				<textarea class="autoselect" id="embed_code">&lt;iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"&gt;&lt;/iframe&gt;</textarea>
+			</div>
+		</div>
+	</body>
+</html>
 
-<h2>{%?filename}</h2>
 
-<iframe src="/document/{%?slug}/embed" class="viewer"></iframe>
