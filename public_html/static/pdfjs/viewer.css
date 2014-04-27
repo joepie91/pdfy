@@ -359,10 +359,17 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 
 #toolbarViewer {
   height: 32px;
+  z-index: 10001;
+  position: relative;
+  /* We need to mimick the style here... */
+  background-color: #474747;
+  background-image: url(images/texture.png), linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08), inset 0 1px 1px hsla(0,0%,0%,.15), inset 0 -1px 0 hsla(0,0%,100%,.05), 0 1px 0 hsla(0,0%,0%,.15), 0 1px 1px hsla(0,0%,0%,.1);
 }
 
 #loadingBar {
   position: relative;
+  z-index: 10001;
   width: 100%;
   height: 6px;
   background-color: #333;
@@ -417,7 +424,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
 .findbar, .secondaryToolbar {
   top: 32px;
   position: absolute;
-  z-index: 10000;
+  z-index: 10002;
   height: 32px;
 
   min-width: 16px;
@@ -1439,7 +1446,7 @@ canvas {
   width: 100%;
   height: 100%;
   background-color: hsla(0,0%,0%,.2);
-  z-index: 10000;
+  z-index: 10002;
 }
 #overlayContainer > * {
   overflow: auto;
@@ -1986,14 +1993,18 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
 
 #toolbarToggle
 {
+  position: relative;
+  top: -7px;
   display: none;
   background-color: hsla(0,0%,27%);
   background-image: none;
-  padding: 4px 7px;
+  padding: 11px 7px 4px 7px;
   width: 16px;
   height: 18px;
   left: 4px;
   color: hsl(0,0%,85%);
+  border-radius: 3px;
+  text-align: center;
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0, 0%, 13%, 0.15),
               inset 0 -1px 0 hsla(0, 2%, 49%, 0.05),
@@ -2002,6 +2013,7 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
               0 1px 0 hsla(0,0%,0%,.15),
               0 1px 1px hsla(0,0%,0%,.1),
               2px 2px 2px 0px #303030;
+  z-index: 10000;
 }
 
 ::-webkit-scrollbar
