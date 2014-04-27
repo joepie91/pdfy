@@ -37,6 +37,10 @@
 					<div class="download">
 						Download as: <a href="/document/{%?slug}/download" class="pure-button inline">PDF</a>
 					</div>
+					
+					<div class="embed">
+						Embed: <input class="autoselect embed_code" value='<iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"></iframe>'>
+					</div>
 				</div>
 			</div>
 			<div class="sidebar">
@@ -61,7 +65,7 @@
 					<input type="radio" id="toolbar_no" name="sparse" value="1"><label for="toolbar_no">Hide toolbar</label>
 				</div>
 				
-				<textarea class="autoselect" id="embed_code">&lt;iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"&gt;&lt;/iframe&gt;</textarea>
+				<textarea class="autoselect embed_code">&lt;iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"&gt;&lt;/iframe&gt;</textarea>
 			</div>
 		</div>
 	</body>

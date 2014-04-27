@@ -144,7 +144,7 @@ $(function(){
 	
 	$(".toolbar-settings input").on("change", function(event){
 		var new_value = $("input[name=sparse]:checked").val();
-		$("#embed_code").val(embed_template.replace("{SPARSE}", new_value));
+		$(".embed_code").val(embed_template.replace("{SPARSE}", new_value));
 	});
 });
 

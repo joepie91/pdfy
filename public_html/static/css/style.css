@@ -84,6 +84,13 @@ body {
       background-color: #014949;
       width: 0%;
       border-radius: 3px; }
+  body .viewer-contents .embed_code {
+    width: 280px;
+    background-color: #1C1C1C;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    color: #E1E1E1; }
   body .viewer-contents .viewer-wrapper {
     position: absolute;
     top: 78px;
@@ -118,6 +125,9 @@ body {
         float: left;
         margin-top: 4px;
         font-weight: bold; }
+      body .viewer-contents .bottombar .tools .embed {
+        float: right;
+        margin-right: 48px; }
       body .viewer-contents .bottombar .tools .download {
         float: right; }
   body .viewer-contents .sidebar {
@@ -129,14 +139,8 @@ body {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     padding: 16px; }
-    body .viewer-contents .sidebar textarea {
-      width: 280px;
-      height: 100px;
-      background-color: #1C1C1C;
-      border: 1px solid black;
-      border-radius: 4px;
-      padding: 4px;
-      color: #E1E1E1; }
+    body .viewer-contents .sidebar .embed_code {
+      height: 100px; }
     body .viewer-contents .sidebar h3 {
       margin-bottom: 8px;
       margin-top: 28px; }
@@ -164,6 +168,9 @@ body {
 
 @media (max-width: 575px) {
   .header .abuse {
+    display: none; } }
+@media (max-width: 640px) {
+  .bottombar .embed {
     display: none; } }
 @media (max-width: 800px) {
   .dragdrop-instructions {

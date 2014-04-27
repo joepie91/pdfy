@@ -172,6 +172,16 @@ body
 	
 	.viewer-contents
 	{
+		.embed_code
+		{
+			width: 280px;
+			background-color: #1C1C1C;
+			border: 1px solid black;
+			border-radius: 4px;
+			padding: 4px;
+			color: #E1E1E1;
+		}
+		
 		.viewer-wrapper
 		{
 			position: absolute;
@@ -225,6 +235,12 @@ body
 					font-weight: bold;
 				}
 				
+				.embed
+				{
+					float: right;
+					margin-right: 48px;
+				}
+				
 				.download
 				{
 					float: right;
@@ -243,15 +259,9 @@ body
 			-moz-box-sizing: border-box;
 			padding: 16px;
 			
-			textarea
+			.embed_code
 			{
-				width: 280px;
 				height: 100px;
-				background-color: #1C1C1C;
-				border: 1px solid black;
-				border-radius: 4px;
-				padding: 4px;
-				color: #E1E1E1;
 			}
 			
 			h3
@@ -301,6 +311,14 @@ body
 @media (max-width: 575px)
 {
 	.header .abuse
+	{
+		display: none;
+	}
+}
+
+@media (max-width: 640px)
+{
+	.bottombar .embed
 	{
 		display: none;
 	}
