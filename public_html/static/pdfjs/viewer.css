@@ -2081,3 +2081,16 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
   background-image: url(/static/pdfjs/images/arrow-left.png);
   border-right: 1px solid black;
 }
+
+.spinner
+{
+  position: absolute;
+  right: 32px;
+  top: 20px;
+  display: none;
+}
+
+.loadingInProgress .spinner
+{
+  display: block;
+}
