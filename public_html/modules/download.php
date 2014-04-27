@@ -23,8 +23,12 @@ catch (NotFoundException $e)
 	die("404 Not Found");
 }
 
-header('Content-Type: application/pdf');
+$source_file = "{$cphp_config->storage_path}/$document->sFilename";
+$filesize = filesize($source_file);
+
+header("Content-Type: application/pdf");
+header("Content-Length: {$filesize}");
 header("Content-Transfer-Encoding: Binary"); 
 header("Content-disposition: attachment; filename=\"{$document->uOriginalFilename}\""); 
-readfile("{$cphp_config->storage_path}/$document->sFilename");
+readfile($source_file);
 die();
