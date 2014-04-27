@@ -31,7 +31,7 @@ $block_size = (1024 * 1000); /* 1MB block size */
 $source_file = "{$cphp_config->storage_path}/$document->sFilename";
 $filesize = filesize($source_file);
 
-/* Range request processing, source: https://stackoverflow.com/a/4451376/1332715 */
+/* Range request processing, based on https://stackoverflow.com/a/4451376/1332715 (with modifications) */
 $range = false;
 
 if(isset($_SERVER['HTTP_RANGE']))
