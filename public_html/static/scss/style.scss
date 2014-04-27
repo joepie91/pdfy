@@ -59,6 +59,12 @@ body
 			margin: 0px;
 			display: inline-block;
 			font-size: 32px;
+			
+			a
+			{
+				text-decoration: inherit;
+				color: inherit;
+			}
 		}
 		
 		.pure-button

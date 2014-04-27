@@ -33,6 +33,9 @@ body {
       margin: 0px;
       display: inline-block;
       font-size: 32px; }
+      body .header h1 a {
+        text-decoration: inherit;
+        color: inherit; }
     body .header .pure-button {
       background-color: #3C3C3C; }
     body .header .button-upload {
