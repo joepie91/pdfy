@@ -136,20 +136,22 @@ else
 		$block = stream_get_contents($handle, $length, $offset);
 		echo($block);
 		
-		if($range !== false)
+		$next_offset = $offset + $length;
+		
+		if($next_offset > $range_end)
 		{
-			if($offset + $block_size > $range_end)
-			{
-				break;
-			}
-			
-			if($offset + ($block_size * 2) > $range_end)
-			{
-				$length = $range_end - ($offset + $block_size);
-			}
+			/* We're done here. */
+			break;
 		}
 		
-		$offset += $block_size;
+		if($next_offset + $length > $range_end)
+		{
+			/*The next block contains the range end. We don't want to serve beyond
+			 * that point, so we change the length to end at the range end. */
+			$length = $range_end - $next_offset + 1;
+		}
+		
+		$offset = $next_offset;
 		
 		/* Ensure that script execution doesn't time out. */
 		set_time_limit(0);
