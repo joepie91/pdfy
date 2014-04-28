@@ -8,7 +8,7 @@
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="/static/js/script.js"></script>
 		<script>
-			var embed_template = '<iframe src="http://pdf.cryto.net/document/{%?slug}/embed?sparse={SPARSE}" style="width: 960; height: 700; border: 0px;"></iframe>';
+			var embed_template = '<iframe src="http://pdf.cryto.net/document/{%?slug}/embed?sparse={SPARSE}" style="width: 960px; height: 700px; border: 0px;"></iframe>';
 		</script>
 		{%if private == true}
 			<meta name="robots" content="noindex">
@@ -42,7 +42,7 @@
 					</div>
 					
 					<div class="embed">
-						Embed: <input class="autoselect embed_code" value='<iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"></iframe>'>
+						Embed: <input class="autoselect embed_code" value='<iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;"></iframe>'>
 					</div>
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 					<input type="radio" id="toolbar_no" name="sparse" value="1"><label for="toolbar_no">Hide toolbar</label>
 				</div>
 				
-				<textarea class="autoselect embed_code">&lt;iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960; height: 700; border: 0px;"&gt;&lt;/iframe&gt;</textarea>
+				<textarea class="autoselect embed_code">&lt;iframe src="http://pdf.cryto.net/document/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;"&gt;&lt;/iframe&gt;</textarea>
 			</div>
 		</div>
 	</body>
