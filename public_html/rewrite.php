@@ -19,10 +19,10 @@ $router->routes = array(
 		"^/$" => "modules/index.php",
 		"^/upload$" => "modules/upload.php",
 		"^/error(/[0-9]*)?$" => "modules/error.php",
-		"^/document/([^/]+)$" => "modules/view.php",
-		/*"^/document/([^/]+)/delete/([^/]+)$" => "modules/delete.php",*/
-		"^/document/([^/]+)/download$" => "modules/download.php",
-		"^/document/([^/]+)/embed$" => "modules/embed.php",
+		"^/d(?:ocument)?/([^/]+)$" => "modules/view.php",
+		/*"^/d(?:ocument)?/([^/]+)/delete/([^/]+)$" => "modules/delete.php",*/
+		"^/d(?:ocument)?/([^/]+)/download$" => "modules/download.php",
+		"^/d(?:ocument)?/([^/]+)/embed$" => "modules/embed.php",
 	)
 );
 

@@ -61,5 +61,5 @@ if($router->uMethod == "post")
 	$document->uUploadDate = time();
 	$document->InsertIntoDatabase();
 	
-	die("document/{$slug}");
+	die("d/{$slug}");
 }
