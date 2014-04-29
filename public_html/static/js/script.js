@@ -146,6 +146,12 @@ $(function(){
 		var new_value = $("input[name=sparse]:checked").val();
 		$(".embed_code").val(embed_template.replace("{SPARSE}", new_value));
 	});
+	
+	/* Patches Linkify breaking the <textarea> contents... */
+	if(embed_template)
+	{
+		$(".embed_code").val(embed_template.replace("{SPARSE}", "0"));
+	}
 });
 
 function updateUploadProgress(event)
