@@ -1,0 +1,24 @@
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+
+--
+
+Please note that some other works used in the creation of PDFy, most notably pdf.js, are released under a difference license.
+
+Third-party works used:
+* pdf.js (with minor modifications), Apache License, https://mozilla.github.io/pdf.js/
+* jQuery, MIT license, https://jquery.com/
+* jQuery File Upload Plugin, MIT license, https://github.com/blueimp/jQuery-File-Upload
+* Pure, BSD license, http://purecss.io/
