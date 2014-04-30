@@ -17,6 +17,7 @@ $router->allow_slash = true;
 $router->routes = array(
 	0 => array(
 		"^/$" => "modules/index.php",
+		"^/tos$" => "modules/tos.php",
 		"^/upload$" => "modules/upload.php",
 		"^/error(/[0-9]*)?$" => "modules/error.php",
 		"^/d(?:ocument)?/([^/]+)$" => "modules/view.php",
