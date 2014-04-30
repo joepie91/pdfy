@@ -169,6 +169,13 @@ body {
       body .viewer-contents .sidebar .toolbar-settings label {
         margin-right: 9px; }
 
+.footer {
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid #DEDEDE;
+  font-size: 14px;
+  color: #DEDEDE; }
+
 #drag_ghost {
   display: none;
   position: absolute;
