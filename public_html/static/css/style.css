@@ -168,6 +168,49 @@ body {
         margin-right: 4px; }
       body .viewer-contents .sidebar .toolbar-settings label {
         margin-right: 9px; }
+  body .gallery {
+    background-color: #242427;
+    border: 1px solid black; }
+    body .gallery .clear {
+      clear: both; }
+    body .gallery .next, body .gallery .previous {
+      display: block;
+      padding: 16px;
+      font-size: 18px; }
+    body .gallery .next {
+      float: right; }
+    body .gallery .previous {
+      float: left; }
+    body .gallery .document {
+      padding: 24px;
+      border-bottom: 1px solid black;
+      display: block;
+      color: white; }
+      body .gallery .document:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      body .gallery .document:hover {
+        background-color: #2a2a2e; }
+      body .gallery .document span {
+        display: block; }
+      body .gallery .document span.thumb {
+        width: 83px;
+        height: 120px;
+        float: left;
+        background-color: white;
+        margin-right: 16px; }
+        body .gallery .document span.thumb img {
+          height: 120px; }
+      body .gallery .document .name {
+        font-weight: bold;
+        font-size: 24px; }
+      body .gallery .document .date {
+        font-size: 20px; }
+      body .gallery .document .views {
+        font-size: 18px; }
 
 .footer {
   margin-top: 32px;

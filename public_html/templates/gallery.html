@@ -1,0 +1,20 @@
+<div class="gallery">
+	{%foreach document in documents}
+		<a class="document" href="/d/{%?document[slug]}">
+			<span class="thumb">
+				<img src="/static/thumbs/{%?document[slug]}.png">
+			</span>
+
+			<span class="name">{%?document[name]}</span>
+			<span class="date">Uploaded on {%?document[date]}</span>
+			<span class="views">{%?document[views]} views</span>
+		</a>
+	{%/foreach}
+	{%if previous != 0}
+		<a href="/gallery/{%?previous}" class="previous">&lt;&lt; Previous</a>
+	{%/if}
+	{%if next != 0}
+		<a href="/gallery/{%?next}" class="next">Next &gt;&gt;</a>
+	{%/if}
+	<div class="clear"></div>
+</div>

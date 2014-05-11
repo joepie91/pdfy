@@ -24,6 +24,7 @@ $router->routes = array(
 		/*"^/d(?:ocument)?/([^/]+)/delete/([^/]+)$" => "modules/delete.php",*/
 		"^/d(?:ocument)?/([^/]+)/download$" => "modules/download.php",
 		"^/d(?:ocument)?/([^/]+)/embed$" => "modules/embed.php",
+		"^/gallery(?:/([0-9]+))?$" => "modules/gallery.php"
 	)
 );
 
