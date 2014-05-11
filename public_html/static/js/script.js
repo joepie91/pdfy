@@ -148,7 +148,7 @@ $(function(){
 	});
 	
 	/* Patches Linkify breaking the <textarea> contents... */
-	if(embed_template)
+	if(typeof embed_template !== "undefined")
 	{
 		$(".embed_code").val(embed_template.replace("{SPARSE}", "0"));
 	}
