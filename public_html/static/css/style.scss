@@ -6,72 +6,72 @@ body
 	padding: 0px;
 	margin: 0px;
 	font-size: 16px;
-	
+
 	&.full-screen
 	{
 		overflow: hidden;
 	}
-	
+
 	a
 	{
 		color: #94EBD9;
 		text-decoration: none;
-		
+
 		&:hover
 		{
 			/*color: #67C7B3;*/
 			color: #BAF5E9;
 		}
 	}
-		
+
 	.pure-button
 	{
 		background-color: #181818;
 		border: 1px solid #0B7474;
 		color: white;
-		
+
 		&.inline
 		{
 			 padding: 3px 9px;
 			 margin: 0px 4px;
 		}
 	}
-	
+
 	.wrapper
 	{
 		max-width: 960px;
 		margin: 0px auto;
 	}
-	
+
 	.header, .contents, .subtext
 	{
 		padding: 18px;
 	}
-	
+
 	.header
 	{
 		background-color: black;
 		overflow: hidden;
 		height: 42px;
-			
+
 		h1
 		{
 			margin: 0px;
 			display: inline-block;
 			font-size: 32px;
-			
+
 			a
 			{
 				text-decoration: inherit;
 				color: inherit;
 			}
 		}
-		
+
 		.pure-button
 		{
 			background-color: #3C3C3C;
 		}
-		
+
 		.button-upload
 		{
 			/*display: inline-block;
@@ -79,7 +79,7 @@ body
 			vertical-align: 5px;*/
 			float: right;
 		}
-		
+
 		.abuse
 		{
 			float: right;
@@ -87,23 +87,23 @@ body
 			margin-top: 10px;
 		}
 	}
-	
+
 	.contents
 	{
 		h2
 		{
 			margin-top: 0px;
 		}
-		
+
 		#upload_activator
 		{
 			margin-bottom: 18px;
 		}
-		
+
 		.latest
 		{
 			margin-top: 64px;
-			
+
 			a
 			{
 				display: inline-block;
@@ -112,75 +112,75 @@ body
 				background-color: white;
 				text-decoration: none;
 				border: 0px;
-				
+
 				img
 				{
 					width: 150px;
 				}
 			}
 		}
-		
+
 		.upload-form
 		{
 			font-size: 18px;
 			text-align: center;
-			
+
 			.button-browse
 			{
 				font-size: 24px;
 				vertical-align: -1px;
 				margin-right: 24px;
 			}
-			
+
 			.faded
 			{
 				opacity: 0.4;
 			}
-			
+
 			.info, .fileinfo, .progress
 			{
 				text-align: left;
 				max-width: 700px;
 				margin: 64px auto 0px auto;
 			}
-			
+
 			.fileinfo
 			{
 				display: none;
-				
+
 				h2
 				{
 					margin: 0px 0px 16px 0px;
 				}
-				
+
 				.button-submit
 				{
 					float: right;
 					margin-top: 16px;
 				}
 			}
-			
+
 			.progress
 			{
 				display: none;
 				margin-top: 32px;
-				
+
 				.wait
 				{
 					display: none;
 				}
 			}
-			
+
 			#upload_element
 			{
 				display: none;
 			}
-			
+
 			.bar, .bar-inner
 			{
 				height: 12px;
 			}
-			
+
 			.bar
 			{
 				border: 1px solid #0B7474;
@@ -188,7 +188,7 @@ body
 				overflow: hidden;
 				margin-top: 8px;
 			}
-			
+
 			.bar-inner
 			{
 				background-color: #014949;
@@ -197,7 +197,7 @@ body
 			}
 		}
 	}
-	
+
 	.viewer-contents
 	{
 		.embed_code
@@ -209,7 +209,7 @@ body
 			padding: 4px;
 			color: #E1E1E1;
 		}
-		
+
 		.viewer-wrapper
 		{
 			position: absolute;
@@ -218,7 +218,7 @@ body
 			left: 0px;
 			right: 320px;
 			overflow: hidden;
-			
+
 			.viewer
 			{
 				width: 100%;
@@ -226,7 +226,7 @@ body
 				border: 0px;
 			}
 		}
-		
+
 		.bottombar
 		{
 			display: none;
@@ -236,11 +236,11 @@ body
 			right: 0px;
 			height: 48px;
 			padding: 8px;
-			
+
 			.header-wrapper
 			{
 				width: 99%;
-								
+
 				h2
 				{
 					display: block;
@@ -251,31 +251,31 @@ body
 					text-overflow: ellipsis;
 				}
 			}
-			
+
 			.tools
 			{
 				font-size: 14px;
-				
+
 				.views
 				{
 					float: left;
 					margin-top: 4px;
 					font-weight: bold;
 				}
-				
+
 				.embed
 				{
 					float: right;
 					margin-right: 48px;
 				}
-				
+
 				.download
 				{
 					float: right;
 				}
 			}
 		}
-		
+
 		.sidebar
 		{
 			position: absolute;
@@ -286,32 +286,32 @@ body
 			box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			padding: 16px;
-			
+
 			.embed_code
 			{
 				height: 100px;
 			}
-			
+
 			h3
 			{
 				margin-bottom: 8px;
 				margin-top: 28px;
 			}
-			
+
 			p
 			{
 				margin: 8px 0px;
 			}
-			
+
 			.toolbar-settings
 			{
 				margin: 8px 3px;
-				
+
 				input
 				{
 					 margin-right: 4px;
 				}
-				
+
 				label
 				{
 					margin-right: 9px;
@@ -463,13 +463,13 @@ body
 			{
 				display: none;
 			}
-			
+
 			.viewer-wrapper
 			{
 				right: 0px;
 				bottom: 64px;
 			}
-			
+
 			.bottombar
 			{
 				display: block;

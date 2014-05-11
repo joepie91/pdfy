@@ -40,8 +40,8 @@ body {
       background-color: #3C3C3C; }
     body .header .button-upload {
       /*display: inline-block;
-      margin-left: 32px;
-      vertical-align: 5px;*/
+			margin-left: 32px;
+			vertical-align: 5px;*/
       float: right; }
     body .header .abuse {
       float: right;
@@ -235,12 +235,15 @@ body {
 @media (max-width: 575px) {
   .header .abuse {
     display: none; } }
+
 @media (max-width: 640px) {
   .bottombar .embed {
     display: none; } }
+
 @media (max-width: 800px) {
   .dragdrop-instructions {
     display: block; } }
+
 @media (max-width: 1200px) {
   body .viewer-contents .sidebar {
     display: none; }
@@ -249,3 +252,5 @@ body {
     bottom: 64px; }
   body .viewer-contents .bottombar {
     display: block; } }
+
+/*# sourceMappingURL=style.css.map */
