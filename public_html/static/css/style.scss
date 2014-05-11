@@ -104,7 +104,7 @@ body
 		{
 			margin-top: 64px;
 
-			a
+			a.document
 			{
 				display: inline-block;
 				width: 150px;
@@ -117,6 +117,13 @@ body
 				{
 					width: 150px;
 				}
+			}
+
+			a.gallery-link
+			{
+				display: block;
+				float: right;
+				padding: 12px 64px;
 			}
 		}
 
@@ -325,11 +332,6 @@ body
 		background-color: #242427;
 		border: 1px solid black;
 
-		.clear
-		{
-			clear: both;
-		}
-
 		.next, .previous
 		{
 			display: block;
@@ -476,4 +478,9 @@ body
 			}
 		}
 	}
+}
+
+.clear
+{
+	clear: both;
 }

@@ -53,15 +53,19 @@ body {
     margin-bottom: 18px; }
   body .contents .latest {
     margin-top: 64px; }
-    body .contents .latest a {
+    body .contents .latest a.document {
       display: inline-block;
       width: 150px;
       height: 218px;
       background-color: white;
       text-decoration: none;
       border: 0px; }
-      body .contents .latest a img {
+      body .contents .latest a.document img {
         width: 150px; }
+    body .contents .latest a.gallery-link {
+      display: block;
+      float: right;
+      padding: 12px 64px; }
   body .contents .upload-form {
     font-size: 18px;
     text-align: center; }
@@ -171,8 +175,6 @@ body {
   body .gallery {
     background-color: #242427;
     border: 1px solid black; }
-    body .gallery .clear {
-      clear: both; }
     body .gallery .next, body .gallery .previous {
       display: block;
       padding: 16px;
@@ -252,5 +254,8 @@ body {
     bottom: 64px; }
   body .viewer-contents .bottombar {
     display: block; } }
+
+.clear {
+  clear: both; }
 
 /*# sourceMappingURL=style.css.map */

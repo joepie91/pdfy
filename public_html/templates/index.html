@@ -71,10 +71,12 @@
 <div class="latest">
 	<h2>Latest public documents</h2>
 	{%foreach document in documents}
-		<a href="/d/{%?document[slug]}">
+		<a href="/d/{%?document[slug]}" class="document">
 			<img src="/static/thumbs/{%?document[slug]}.png" title="{%?document[name]}">
 		</a>
 	{%/foreach}
+	<a href="/gallery" class="gallery-link">... or view more public documents in the gallery. &raquo;</a>
+	<div class="clear"></div>
 </div>
 
 <div class="footer">
