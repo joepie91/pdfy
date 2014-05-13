@@ -1,0 +1,33 @@
+{
+	"database": {
+		"driver": "mysql",
+		"hostname": "localhost",
+		"username": "usergoeshere",
+		"password": "passwordgoeshere",
+		"database": "pdf"
+	},
+	"locale": {
+		"path": 		"locales",
+		"extension":		"lng",
+		"default_locale": 	"english",
+		"default_timezone": 	"Europe/Amsterdam"
+	},
+	"templates": {
+		"extension": "html"
+	},
+	"memcache": {
+		"enabled": 	true,
+		"compressed": 	true,
+		"hostname": 	"localhost",
+		"port": 	11211
+	},
+	"class_map": {
+		"document": "Document"
+	},
+	"components": [
+		"router",
+		"errorhandler"
+	],
+	"autoloader": true,
+	"storage_path": "../storage"
+}
