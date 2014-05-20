@@ -1606,6 +1606,7 @@ var SecondaryToolbar = {
 		// Define the toolbar buttons.
 		this.toggleButton = options.toggleButton;
 		this.presentationModeButton = options.presentationModeButton;
+		this.fullScreenModeButton = options.fullScreenModeButton;
 		this.openFile = options.openFile;
 		this.print = options.print;
 		this.download = options.download;
@@ -1624,6 +1625,8 @@ var SecondaryToolbar = {
 			// (except for toggleHandTool, hand_tool.js is responsible for it):
 			{ element: this.presentationModeButton,
 				handler: this.presentationModeClick },
+			{ element: this.fullScreenModeButton,
+				handler: this.fullScreenModeClick },
 			{ element: this.openFile, handler: this.openFileClick },
 			{ element: this.print, handler: this.printClick },
 			{ element: this.download, handler: this.downloadClick },
@@ -1646,7 +1649,25 @@ var SecondaryToolbar = {
 
 	// Event handling functions.
 	presentationModeClick: function secondaryToolbarPresentationModeClick(evt) {
+		PresentationMode.activating = true;
 		this.presentationMode.request();
+		this.close();
+	},
+	
+	fullScreenModeClick: function secondaryToolbarFullScreenModeClick(evt) {
+		toggleFullScreen();
+		/* Trigger a recalc */
+		/*if (PDFView.initialized &&
+				(document.getElementById('pageWidthOption').selected ||
+				 document.getElementById('pageFitOption').selected ||
+				 document.getElementById('pageAutoOption').selected)) {
+			PDFView.setScale(document.getElementById('scaleSelect').value);
+		}
+		updateViewarea();
+
+		// Set the 'max-height' CSS property of the secondary toolbar.
+		SecondaryToolbar.setMaxHeight(PDFView.container);*/
+		
 		this.close();
 	},
 
@@ -1924,6 +1945,7 @@ var PresentationMode = {
 		setTimeout(function enterPresentationModeTimeout() {
 			PDFView.page = this.args.page;
 			PDFView.setScale('page-fit', true);
+			document.body.className = "presentation";
 		}.bind(this), 0);
 
 		window.addEventListener('mousemove', this.mouseMove, false);
@@ -1937,6 +1959,7 @@ var PresentationMode = {
 	},
 
 	exit: function presentationModeExit() {
+		console.log("Exiting presentation mode...");
 		var page = PDFView.page;
 
 		// Ensure that the correct page is scrolled into view when exiting
@@ -1947,6 +1970,7 @@ var PresentationMode = {
 			PDFView.setScale(this.args.previousScale);
 			PDFView.page = page;
 			this.args = null;
+			document.body.className = "";
 		}.bind(this), 0);
 
 		window.removeEventListener('mousemove', this.mouseMove, false);
@@ -2028,10 +2052,13 @@ var PresentationMode = {
 
 (function presentationModeClosure() {
 	function presentationModeChange(e) {
-		if (PresentationMode.isFullscreen) {
-			PresentationMode.enter();
-		} else {
-			PresentationMode.exit();
+		if (PresentationMode.activating) {
+			if (PresentationMode.isFullscreen) {
+				PresentationMode.enter();
+			} else {
+				PresentationMode.exit();
+				PresentationMode.activating = false;
+			}
 		}
 	}
 
@@ -2572,6 +2599,8 @@ var PDFView = {
 			toggleButton: document.getElementById('secondaryToolbarToggle'),
 			presentationModeButton:
 				document.getElementById('secondaryPresentationMode'),
+			fullScreenModeButton:
+				document.getElementById('secondaryFullScreen'),
 			openFile: document.getElementById('secondaryOpenFile'),
 			print: document.getElementById('secondaryPrint'),
 			download: document.getElementById('secondaryDownload'),
@@ -5241,6 +5270,9 @@ function webViewerInitialized() {
 
 	document.getElementById('presentationMode').addEventListener('click',
 		SecondaryToolbar.presentationModeClick.bind(SecondaryToolbar));
+	
+	document.getElementById('fullScreen').addEventListener('click',
+		SecondaryToolbar.fullScreenModeClick.bind(SecondaryToolbar));
 
 	document.getElementById('openFile').addEventListener('click',
 		SecondaryToolbar.openFileClick.bind(SecondaryToolbar));
@@ -5758,7 +5790,7 @@ window.addEventListener('afterprint', function afterPrint(evt) {
 })();
 
 $(function(){
-	 if(SPARSE == true)
+	if(SPARSE == true)
 	{
 		$("#toolbarViewer").hide();
 		$("#toolbarToggle").show();
@@ -5786,3 +5818,29 @@ $(function(){
 		});
 	}
 });
+
+/* Source: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode */
+function toggleFullScreen() {
+	if (!document.fullscreenElement &&
+		!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else if (document.documentElement.msRequestFullscreen) {
+			document.documentElement.msRequestFullscreen();
+		} else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		} else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		}
+	} else {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		}
+	}
+}
