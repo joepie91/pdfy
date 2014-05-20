@@ -47,26 +47,35 @@ body {
 
 .footer_bar
 {
-  background-color: black;
+  background-color: #474747;
+  background-image: url(images/texture.png), linear-gradient(hsla(0, 0%, 18%, 0.99), hsla(0, 0%, 9%, 0.95));
   color: white;
   position: absolute;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  height: 20px;
-  padding: 6px 8px;
-  font-size: 15px;
-}
-
-.footer_bar a
-{
-  color: #BBDCDC;
+  height: 14px;
+  padding: 10px 10px;
+  font-size: 14px;
 }
 
 .footer_bar a.original
 {
   float: right;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  padding: 5px 8px;
+  position: relative;
+  top: -8px;
 }
+
+.embed-logo
+{
+  vertical-align: -6px;
+  margin-left: 3px;
+}
+
 
 body,
 input,
