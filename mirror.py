@@ -29,7 +29,7 @@ template = """
 	<li><strong>URL:</strong> <a href="http://pdf.yt/d/%(slug)s">http://pdf.yt/d/%(slug)s</a></li>
 	<li><strong>Upload date:</strong> %(upload_date)s</li>
 </ul>
-"""
+""".replace("\n", "")
 
 with open("config.json", "r") as f:
 	conf = json.loads(f.read())
@@ -69,6 +69,6 @@ for doc in items:
 		cur = dbconn.cursor()
 		cur.execute("UPDATE documents SET `Mirrored` = 1 WHERE `Id` = ?", (id_,))
 
-		print "Uploaded %s (%s)" % (slug, title)
+		print "Uploaded %s (%s)" % (slug, real_filename)
 	else:
 		print "FAILED upload of %s (%s)!" % (slug, title)
