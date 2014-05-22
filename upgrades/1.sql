@@ -1,0 +1,1 @@
+ALTER TABLE  `documents` ADD  `Mirrored` BOOLEAN NOT NULL DEFAULT '0';

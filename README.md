@@ -16,6 +16,7 @@ For the Internet Archive auto-mirror script (optional):
 
 * Python
 * The `internetarchive` Python module (`pip install internetarchive`)
+* The `oursql` Python module (`pip install internetarchive`, depends on libmysqlclient being installed)
 * A cron daemon
 
 ## Setup

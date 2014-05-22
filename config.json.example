@@ -29,5 +29,9 @@
 		"errorhandler"
 	],
 	"autoloader": true,
-	"storage_path": "../storage"
+	"storage_path": "../storage",
+	"internetarchive": {
+		"accesskey": "YOURACCESSKEYHERE",
+		"secretkey": "YOURSECRETKEYHERE"
+	}
 }
