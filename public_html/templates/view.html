@@ -1,10 +1,21 @@
 <!doctype html>
-<html>
+<html itemscope itemtype="http://schema.org/CreativeWork">
 	<head>
 		<title>View {%?filename} - PDFy - Instant PDF Host</title>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
 		<link rel="stylesheet" href="/static/css/style.css">
+		<meta itemprop="name" content="{%?filename}">
+		<meta itemprop="image" content="http://pdf.yt/static/thumbs/{%?slug}.png">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="{%?filename}">
+		<meta name="twitter:description" content="Read and download {%?filename} for free!"> <!-- Sorry! Twitter wants us to have a description text. -->
+		<meta name="twitter:image:src" content="http://pdf.yt/static/thumbs/{%?slug}.png">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{%?filename}">
+		<meta property="og:url" content="http://pdf.yt/d/{%?slug}">
+		<meta property="og:site_name" content="PDFy">
+		<meta property="og:image" content="http://pdf.yt/static/thumbs/{%?slug}.png">
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="/static/js/script.js"></script>
 		<script>
