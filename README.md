@@ -3,6 +3,21 @@ PDFy
 
 The PDF hosting software powering http://pdf.yt/.
 
+## Dependencies
+
+* A PHP-capable HTTPd
+* PHP
+* MySQL
+* ImageMagick
+* php5-mysql
+* php5-imagick
+
+For the Internet Archive auto-mirror script (optional):
+
+* Python
+* The `internetarchive` Python module (`pip install internetarchive`)
+* A cron daemon
+
 ## Setup
 
 If you wish to run PDFy yourself, this is how:
