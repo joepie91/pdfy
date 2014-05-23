@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import json, internetarchive, oursql, os
+import json, internetarchive, oursql, os, sys
 from requests.exceptions import ConnectionError
 
 
@@ -64,10 +64,21 @@ for doc in items:
 		"date": "2014-01-01"
 	}
 	
-	if item.upload([(real_filename, source_file)], metadata=metadata, access_key=conf["internetarchive"]["accesskey"], secret_key=conf["internetarchive"]["secretkey"]):
-		cur = dbconn.cursor()
-		cur.execute("UPDATE documents SET `Mirrored` = 1 WHERE `Id` = ?", (id_,))
+	err = False
+	
+	try:
+		if item.upload([(real_filename, source_file)], metadata=metadata, access_key=conf["internetarchive"]["accesskey"], secret_key=conf["internetarchive"]["secretkey"]):
+			cur = dbconn.cursor()
+			cur.execute("UPDATE documents SET `Mirrored` = 1 WHERE `Id` = ?", (id_,))
 
-		print "Uploaded %s (%s)" % (slug, real_filename)
-	else:
-		print "FAILED upload of %s (%s)!" % (slug, title)
+			print "Uploaded %s (%s)" % (slug, real_filename)
+		else:
+			print "FAILED upload of %s (%s)!" % (slug, title)
+			err = True
+	except Exception, e:
+		sys.stderr.write(str(e))
+		err = True
+		
+	if err == True:
+		cur = dbconn.cursor()
+		cur.execute("UPDATE documents SET `Mirrored` = 2 WHERE `Id` = ?", (id_,))
