@@ -55,6 +55,7 @@ for doc in items:
 	metadata = {
 		"mediatype": "texts",
 		"subject": ["mirror", "pdf.yt"],
+		"collection": "pdfymirrors",
 		"title": "%s (PDFy mirror)" % real_filename,
 		"description": template % {
 			"real_filename": real_filename,
