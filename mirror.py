@@ -21,12 +21,12 @@ log.setLevel(logging.DEBUG)
 
 template = """
 <p>
-	<strong>This public document was automatically mirrored from <a href="http://pdf.yt/">PDFy</a>.</strong>
+	<strong>This public document was automatically mirrored from <a href="https://pdf.yt/">PDFy</a>.</strong>
 </p>
 
 <ul>
 	<li><strong>Original filename:</strong> %(real_filename)s</li>
-	<li><strong>URL:</strong> <a href="http://pdf.yt/d/%(slug)s">http://pdf.yt/d/%(slug)s</a></li>
+	<li><strong>URL:</strong> <a href="http://pdf.yt/d/%(slug)s">https://pdf.yt/d/%(slug)s</a></li>
 	<li><strong>Upload date:</strong> %(upload_date)s</li>
 </ul>
 """.replace("\n", "")

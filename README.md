@@ -30,7 +30,7 @@ If you wish to run PDFy yourself, this is how:
 5. Create a folder `/var/sites/pdfy/storage` and ensure that it is owned by the user and group that your PHP / HTTPd run under. This is where PDF files will be stored.
 6. Assign ownership of `/var/sites/pdfy/public_html/static/thumbs` to that same user and group.
 7. Add the relevant configuration to your HTTPd (see below).
-8. Replace instances of "http://pdf.yt/" in the code (in particular in embed codes) with the host that your instance will be running at.
+8. Replace instances of "https://pdf.yt/" in the code (in particular in embed codes) with the host that your instance will be running at.
 9. ????
 10. PDFy!
 

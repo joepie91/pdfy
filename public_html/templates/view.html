@@ -2,8 +2,8 @@
 <html itemscope itemtype="http://schema.org/CreativeWork">
 	<head>
 		<title>View {%?filename} - PDFy - Instant PDF Host</title>
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+		<link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//yui.yahooapis.com/pure/0.4.2/pure-min.css">
 		<link rel="stylesheet" href="/static/css/style.css">
 		<meta itemprop="name" content="{%?filename}">
 		<meta itemprop="image" content="http://pdf.yt/static/thumbs/{%?slug}.png">
@@ -19,7 +19,7 @@
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="/static/js/script.js"></script>
 		<script>
-			var embed_template = '<iframe src="http://pdf.yt/d/{%?slug}/embed?sparse={SPARSE}" style="width: 960px; height: 700px; border: 0px;" allowfullscreen></iframe>';
+			var embed_template = '<iframe src="//pdf.yt/d/{%?slug}/embed?sparse={SPARSE}" style="width: 960px; height: 700px; border: 0px;" allowfullscreen></iframe>';
 		</script>
 		{%if private == true}
 			<meta name="robots" content="noindex">
@@ -53,7 +53,7 @@
 					</div>
 					
 					<div class="embed">
-						Embed: <input class="autoselect embed_code" value='<iframe src="http://pdf.yt/d/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;" allowfullscreen></iframe>'>
+						Embed: <input class="autoselect embed_code" value='<iframe src="//pdf.yt/d/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;" allowfullscreen></iframe>'>
 					</div>
 				</div>
 			</div>
@@ -79,7 +79,7 @@
 					<input type="radio" id="toolbar_no" name="sparse" value="1"><label for="toolbar_no">Hide toolbar</label>
 				</div>
 				
-				<textarea class="autoselect embed_code">&lt;iframe src="http://pdf.yt/d/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;" allowfullscreen&gt;&lt;/iframe&gt;</textarea>
+				<textarea class="autoselect embed_code">&lt;iframe src="//pdf.yt/d/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;" allowfullscreen&gt;&lt;/iframe&gt;</textarea>
 			</div>
 		</div>
 	</body>
