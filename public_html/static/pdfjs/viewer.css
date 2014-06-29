@@ -2007,6 +2007,14 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
   }
 }
 
+@media all and (max-width: 425px) {
+  #logo_prefix {
+    display: none;
+  }
+}
+
+
+
 #toolbarToggle
 {
   position: relative;
