@@ -5879,6 +5879,17 @@ $(function(){
 	$(".autoselect").on("click", function(event){
 		$(this).focus().select();
 	});
+	
+	/* This is used to make external URLs in the document open in a new tab. */
+	$("#viewer").on("click", "a[href*='//']", function(event){
+		if(event.which == 1 || event.which == 2)
+		{
+			window.open($(this).attr("href"));
+			event.stopPropagation();
+			event.preventDefault();
+			return false;
+		}
+	});
 });
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode */
