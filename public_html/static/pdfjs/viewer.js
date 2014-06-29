@@ -5789,6 +5789,13 @@ window.addEventListener('afterprint', function afterPrint(evt) {
 	});
 })();
 
+/* Here be dragons! The default pdf.js viewer isn't very tailored towards modifications,
+ * so most of the stuff here is basically a giant duct-taped hack. It all works reliably
+ * as far as I'm aware, but it's not going to win a beauty contest. Maybe at some point
+ * in the future, the pdf.js viewer upstream will be changed to facilitate plugins.
+ * Hopefully.
+ */
+
 $(function(){
 	if(SPARSE == true)
 	{
@@ -5817,6 +5824,61 @@ $(function(){
 			}
 		});
 	}
+	
+	function togglePdfyToolbar(event)
+	{
+		if(pdfyToolbar_visible)
+		{
+			$("#pdfyToolbar").hide().off("click.pdfyToolbar");
+			
+			$(document).off("click.pdfyToolbar");
+		}
+		else
+		{
+			$("#pdfyToolbar").show().on("click.pdfyToolbar", function(event){
+				/*event.stopPropagation();*/
+			});
+			
+			$(document).on("click.pdfyToolbar", function(event){
+				togglePdfyToolbar();
+			});
+		}
+		
+		pdfyToolbar_visible = !pdfyToolbar_visible;
+		if(event)
+		{
+			event.preventDefault();
+			event.stopPropagation();
+		}
+		return false;
+	}
+	
+	$("#pdfyToolbar").hide();
+	var pdfyToolbar_visible = false;
+	$("#pdfyToolbarToggle").click(togglePdfyToolbar);
+	
+	$("#embedCode").click(function(event){
+		event.stopPropagation();
+	});
+	
+	function closeEmbedWindow(event){
+		$(document).off("click.pdfyEmbed");
+		$("#embedCode").hide();
+	}
+	
+	$("#getEmbedCode").click(function(event){
+		$("#embedCode").show();
+		$("#embedCode textarea").focus().select();
+		$(document).on("click.pdfyEmbed", closeEmbedWindow);
+		togglePdfyToolbar();
+		event.stopPropagation();
+	});
+	
+	$("#closeEmbed").click(closeEmbedWindow);
+	
+	$(".autoselect").on("click", function(event){
+		$(this).focus().select();
+	});
 });
 
 /* Source: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode */

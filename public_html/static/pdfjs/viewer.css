@@ -68,8 +68,19 @@ body {
   padding: 5px 8px;
   position: relative;
   top: -8px;
-  right: -6px;
+  /*right: -6px;*/
   margin-right: 0px !important;
+}
+
+a.original
+{
+  border: 1px solid #1a1a1a;
+}
+
+a.original.arrow
+{
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .embed-logo
@@ -346,21 +357,21 @@ html[dir='rtl'] #toolbarSidebar {
               0 0 1px hsla(0,0%,0%,.1);
 }
 
-#toolbarContainer, .findbar, .secondaryToolbar, #toolbarToggle {
+#toolbarContainer, .findbar, .secondaryToolbar, #toolbarToggle, .pdfyToolbar {
   position: relative;
   height: 32px;
   background-color: #474747; /* fallback */
   background-image: url(images/texture.png),
                     linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
 }
-html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
+html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar, .pdfyToolbar {
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
               inset 0 -1px 0 hsla(0,0%,100%,.05),
               0 1px 0 hsla(0,0%,0%,.15),
               0 1px 1px hsla(0,0%,0%,.1);
 }
-html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
+html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar, .pdfyToolbar {
   box-shadow: inset -1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
               inset 0 -1px 0 hsla(0,0%,100%,.05),
@@ -432,7 +443,7 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   animation: progressIndeterminate 2s linear infinite;
 }
 
-.findbar, .secondaryToolbar {
+.findbar, .secondaryToolbar, .pdfyToolbar {
   top: 32px;
   position: absolute;
   z-index: 10002;
@@ -446,6 +457,11 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   line-height: 14px;
   text-align: left;
   cursor: default;
+}
+
+.pdfyToolbar {
+  top: auto;
+  bottom: 32px;
 }
 
 html[dir='ltr'] .findbar {
@@ -467,7 +483,7 @@ html[dir='rtl'] .findbar {
   background-position: right;
 }
 
-.secondaryToolbar {
+.secondaryToolbar, .pdfyToolbar {
   padding: 6px;
   height: auto;
   z-index: 30000;
@@ -475,11 +491,14 @@ html[dir='rtl'] .findbar {
 html[dir='ltr'] .secondaryToolbar {
   right: 4px;
 }
-html[dir='rtl'] .secondaryToolbar {
+html[dir='rtl'] .secondaryToolbar, {
   left: 4px;
 }
+.pdfyToolbar {
+  right: 16px;
+}
 
-#secondaryToolbarButtonContainer {
+#secondaryToolbarButtonContainer, #pdfyToolbarButtonContainer {
   max-width: 200px;
   max-height: 400px;
   overflow-y: auto;
@@ -488,13 +507,14 @@ html[dir='rtl'] .secondaryToolbar {
 }
 
 .doorHanger,
-.doorHangerRight {
+.doorHangerRight, .doorHangerRightBottom {
   border: 1px solid hsla(0,0%,0%,.5);
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .doorHanger:after, .doorHanger:before,
-.doorHangerRight:after, .doorHangerRight:before {
+.doorHangerRight:after, .doorHangerRight:before,
+.doorHangerRightBottom:after, .doorHangerRightBottom:before {
   bottom: 100%;
   border: solid transparent;
   content: " ";
@@ -503,39 +523,66 @@ html[dir='rtl'] .secondaryToolbar {
   position: absolute;
   pointer-events: none;
 }
+
+.doorHangerRightBottom:after, .doorHangerRightBottom:before
+{
+  bottom: auto;
+  top: 100%;
+}
+
 .doorHanger:after,
 .doorHangerRight:after {
   border-bottom-color: hsla(0,0%,32%,.99);
   border-width: 8px;
 }
+
 .doorHanger:before,
 .doorHangerRight:before {
   border-bottom-color: hsla(0,0%,0%,.5);
   border-width: 9px;
 }
 
+.doorHangerRightBottom:after {
+  border-top-color: hsla(0,0%,27%,.95);
+  border-width: 8px;
+}
+
+.doorHangerRightBottom:before {
+  border-top-color: hsla(0,0%,0%,.5);
+  border-width: 9px;
+}
+
 html[dir='ltr'] .doorHanger:after,
-html[dir='rtl'] .doorHangerRight:after {
+html[dir='rtl'] .doorHangerRight:after,
+html[dir='rtl'] .doorHangerRightBottom:after {
   left: 13px;
   margin-left: -8px;
 }
 
 html[dir='ltr'] .doorHanger:before,
-html[dir='rtl'] .doorHangerRight:before {
+html[dir='rtl'] .doorHangerRight:before,
+html[dir='rtl'] .doorHangerRightBottom:before {
   left: 13px;
   margin-left: -9px;
 }
 
 html[dir='rtl'] .doorHanger:after,
-html[dir='ltr'] .doorHangerRight:after {
+html[dir='ltr'] .doorHangerRight:after,
+html[dir='ltr'] .doorHangerRightBottom:after {
   right: 13px;
   margin-right: -8px;
 }
 
 html[dir='rtl'] .doorHanger:before,
-html[dir='ltr'] .doorHangerRight:before {
+html[dir='ltr'] .doorHangerRight:before,
+html[dir='ltr'] .doorHangerRightBottom:before {
   right: 13px;
   margin-right: -9px;
+}
+
+#viewOnPdfy
+{
+  text-decoration: none;
 }
 
 #findMsg {
@@ -976,7 +1023,9 @@ html[dir='rtl'] .toolbarButton.pageDown::before {
 }
 
 .toolbarButton.bookmark,
-.secondaryToolbarButton.bookmark {
+.secondaryToolbarButton.bookmark,
+.toolbarButton.viewOnPdfy,
+.secondaryToolbarButton.viewOnPdfy {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -984,7 +1033,8 @@ html[dir='rtl'] .toolbarButton.pageDown::before {
   padding-top: 4px;
   text-decoration: none;
 }
-.secondaryToolbarButton.bookmark {
+.secondaryToolbarButton.bookmark,
+.secondaryToolbarButton.viewOnPdfy {
   padding-top: 5px;
 }
 
@@ -1031,10 +1081,12 @@ html[dir="rtl"] .secondaryToolbarButton {
   padding-right: 24px;
   text-align: right;
 }
-html[dir="ltr"] .secondaryToolbarButton.bookmark {
-  padding-left: 27px;
+html[dir="ltr"] .secondaryToolbarButton.bookmark,
+html[dir="ltr"] .secondaryToolbarButton.viewOnPdfy {
+  /* padding-left: 27px; */
 }
-html[dir="rtl"] .secondaryToolbarButton.bookmark {
+html[dir="rtl"] .secondaryToolbarButton.bookmark,
+html[dir="rtl"] .secondaryToolbarButton.viewOnPdfy {
   padding-right: 27px;
 }
 
@@ -1843,7 +1895,7 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
   }
 
   /* Rules for browsers that don't support mozPrintCallback. */
-  #sidebarContainer, #secondaryToolbar, .toolbar, #loadingBox, #errorWrapper, .textLayer {
+  #sidebarContainer, #secondaryToolbar, #pdfyToolbar, .toolbar, #loadingBox, #errorWrapper, .textLayer {
     display: none;
   }
   #viewerContainer {
@@ -2007,7 +2059,7 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
   }
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 450px) {
   #logo_prefix {
     display: none;
   }
@@ -2122,4 +2174,89 @@ html[dir='rtl'] #documentPropertiesContainer .row > * {
 .loadingInProgress .spinner
 {
   display: block;
+}
+
+.leftHalf
+{
+  margin-right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.rightHalf
+{
+  margin-left: 0px;
+  margin-right: 16px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#pdfyToolbar .secondaryToolbarButton
+{
+  display: inherit;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-bottom: 1px;
+}
+
+
+#pdfyToolbar {
+  padding: 3px;
+  padding-bottom: 6px;
+}
+
+#embedCode {
+  display: none;
+  margin: auto;
+  position: absolute;
+  z-index: 999999;
+  padding: 10px 10px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  max-height: 140px;
+  max-width: 400px;
+  width: 80%;
+  height: 60%;
+  background-color: #474747; /* fallback */
+  background-image: url(images/texture.png),
+                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  border: 1px solid hsla(0,0%,0%,.5);
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.embedTitle {
+  font: message-box;
+  font-size: 14px;
+  color: hsl(0,0%,95%);
+  margin-left: 1px;
+}
+
+.embedText {
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  border: 0px;
+  color: white;
+  background-color: #363636; /* fallback */
+  background-image: url(images/texture.png),
+                    linear-gradient(hsla(0, 0%, 23%, 0.99), hsla(0, 0%, 20%, 0.95));
+}
+
+.embedTextWrapper {
+  position: absolute;
+  top: 34px;
+  bottom: 35px;
+  left: 10px;
+  right: 10px;
+}
+
+#closeEmbed {
+  width: auto;
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
 }

@@ -29,7 +29,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     </script>
 
 
-    <link rel="stylesheet" href="/static/pdfjs/viewer.css?1"/>
+    <link rel="stylesheet" href="/static/pdfjs/viewer.css?2"/>
 
     <script type="text/javascript" src="/static/pdfjs/compatibility.js"></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -418,10 +418,29 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     </div>
   </div>
     </div>
+    <div id="embedCode">
+      <span class="embedTitle">Embed this document in your page.</span>
+      <div class="embedTextWrapper">
+        <textarea class="autoselect embedText">&lt;iframe src="//pdf.yt/d/{%?slug}/embed" style="width: 960px; height: 700px; border: 0px;" allowfullscreen&gt;&lt;/iframe&gt;</textarea>
+      </div>
+      <button class="toolbarButton" id="closeEmbed">Close</button>
+    </div>
     {%if footer == true}
       <div class="footer_bar">
+        <div id="pdfyToolbar" class="pdfyToolbar doorHangerRightBottom">
+          <div id="pdfyToolbarButtonContainer">
+            <button id="getEmbedCode" class="secondaryToolbarButton" title="Embed" tabindex="1">
+              <span>Embed</span>
+            </button>
+
+            <a href="/d/{%?slug}" target="blank" id="viewOnPdfy" class="secondaryToolbarButton viewOnPdfy visibleLargeView" title="View on PDFy" tabindex="2">
+              <span>View on PDFy</span>
+            </a>
+          </div>
+        </div>
         <span id="logo_prefix">Free instant PDF hosting by </span><a href="https://pdf.yt/" target="_blank"><img class="embed-logo" src="/static/pdfjs/images/embed-logo.png"></a>
-        <a href="https://pdf.yt/d/{%?slug}/download" id="original_download" class="original toolbarButton" target="_blank">Download original PDF</a>
+        <a href="#" id="pdfyToolbarToggle" class="original toolbarButton rightHalf arrow" target="_blank">More...</a>
+        <a href="https://pdf.yt/d/{%?slug}/download" id="original_download" class="original toolbarButton leftHalf" target="_blank">Download original PDF</a>
       </div>
     {%/if}
   </body>
