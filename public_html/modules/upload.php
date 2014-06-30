@@ -27,7 +27,7 @@ if($router->uMethod == "post")
 	
 	$file = $_FILES["file"];
 	
-	if($file["size"] > (50 * 1024 * 1024) ||  $file["error"] !== 0)
+	if($file["size"] > (100 * 1024 * 1024) ||  $file["error"] !== 0)
 	{
 		die("error/{$file['error']}"); /* Intentionally short-circuit. */
 	}
