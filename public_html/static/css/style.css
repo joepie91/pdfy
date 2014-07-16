@@ -258,4 +258,13 @@ body {
 .clear {
   clear: both; }
 
+.notice {
+  background-color: #0A8071;
+  color: white;
+  padding: 12px 14px;
+  margin-bottom: 32px;
+  border-radius: 4px; }
+  .notice a {
+    color: white; }
+
 /*# sourceMappingURL=style.css.map */
