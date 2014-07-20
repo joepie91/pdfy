@@ -13,9 +13,17 @@
 
 if(!isset($_APP)) { die("Unauthorized."); }
 
-$latest = Document::CreateFromQuery("SELECT * FROM documents WHERE `Public` = 1 ORDER BY `Uploaded` DESC, `Id` DESC LIMIT 6");
 $sDocuments = array();
 
+try
+{
+	$latest = Document::CreateFromQuery("SELECT * FROM documents WHERE `Public` = 1 ORDER BY `Uploaded` DESC, `Id` DESC LIMIT 6");
+}
+catch (NotFoundException $e)
+{
+	$latest = array();
+}
+	
 foreach($latest as $document)
 {
 	$sDocuments[] = array(
