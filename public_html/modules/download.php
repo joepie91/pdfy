@@ -101,6 +101,10 @@ if($range !== false)
 	http_status_code(206);
 	header("Content-Range: bytes $range_start-$range_end/$filesize");
 }
+else
+{
+	$range_length = $filesize;
+}
 /* End range request processing */
 
 header("Content-Type: application/pdf");
@@ -108,7 +112,7 @@ header("Content-Transfer-Encoding: Binary");
 header("Content-disposition: attachment; filename=\"{$document->uOriginalFilename}\""); 
 header('Accept-Ranges: bytes');
 
-if($range === false)
+if($range === false && false /* Temporary workaround for lighttpd memory leak */)
 {
 	header("Content-Length: {$filesize}");
 	$offset = 0;
@@ -133,6 +137,12 @@ else
 	
 	for($i = 0; $i < $block_count; $i++)
 	{
+		if(connection_aborted())
+		{
+			/* The request was cancelled; most likely in order to make a subsequent range request. */
+			die();
+		}
+		
 		$block = stream_get_contents($handle, $length, $offset);
 		echo($block);
 		
