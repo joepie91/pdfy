@@ -30,9 +30,9 @@ $(function(){
 				var fileinfo = $(".fileinfo");
 				var filesize = data.files[0].size;
 				
-				if(filesize > (100 * 1024 * 1024))
+				if(filesize > (150 * 1024 * 1024))
 				{
-					alert("You can currently only upload PDFs up to 100MB in size.");
+					alert("You can currently only upload PDFs up to 150MB in size.");
 					$("#upload_element").replaceWith($("#upload_element").clone(true));
 					return;
 				}
@@ -70,9 +70,9 @@ $(function(){
 		var fileinfo = $(".fileinfo");
 		var filesize = this.files[0].size;
 		
-		if(filesize > (100 * 1024 * 1024))
+		if(filesize > (150 * 1024 * 1024))
 		{
-			alert("You can currently only upload PDFs up to 100MB in size.");
+			alert("You can currently only upload PDFs up to 150MB in size.");
 			$("#upload_element").replaceWith($("#upload_element").clone(true));
 			return;
 		}
