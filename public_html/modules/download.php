@@ -104,6 +104,8 @@ if($range !== false)
 else
 {
 	$range_length = $filesize;
+	$range_start = 0;
+	$range_end = $filesize - 1;
 }
 /* End range request processing */
 
