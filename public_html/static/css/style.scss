@@ -220,7 +220,8 @@ body
 		.viewer-wrapper
 		{
 			position: absolute;
-			top: 78px;
+			/*top: 78px;*/
+			top: 117px;
 			bottom: 0px;
 			left: 0px;
 			right: 320px;
@@ -286,7 +287,8 @@ body
 		.sidebar
 		{
 			position: absolute;
-			top: 78px;
+			/*top: 78px;*/
+			top: 117px;
 			bottom: 0px;
 			right: 0px;
 			width: 320px;
@@ -447,11 +449,45 @@ body
 	}
 }
 
+@media (max-width: 660px)
+{
+	.alt-small
+	{
+		display: block;
+	}
+	
+	.alt-large
+	{
+		display: none;
+	}
+}
+
+@media (min-width: 650px)
+{
+	.alt-small
+	{
+		display: none;
+	}
+	
+	.alt-large
+	{
+		display: block;
+	}
+}
+
 @media (max-width: 800px)
 {
 	.dragdrop-instructions
 	{
 		display: block;
+	}
+}
+
+@media (max-width: 1000px)
+{
+	.hide-small
+	{
+		display: none;
 	}
 }
 
@@ -496,5 +532,30 @@ body
 	a
 	{
 		color: white;
+	}
+}
+
+.announce
+{
+	background-color: #0A8071;
+	color: white;
+	text-align: center;
+	padding: 12px 16px;
+	font-size: 18px;
+	
+	a
+	{
+		color: white;
+	}
+}
+
+.full-screen
+{
+	.announce
+	{
+		height: 21px;
+		overflow: hidden;
+		font-size: 17px;
+		padding: 9px 16px;
 	}
 }
